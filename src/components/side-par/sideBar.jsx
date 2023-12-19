@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import { Button } from 'primereact/button';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import TokenContext from '../../Context/tokenContext';
 
 export default function SideBar() {
     const [visible, setVisible] = useState(false);
+    const{token,setToken}=useContext(TokenContext);
+    
+    
 
     return (
         <div className="card flex justify-content-center">
@@ -20,6 +24,7 @@ export default function SideBar() {
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
+            <button className='btn btn-danger' onClick={()=>{setToken("")}}>logout</button>
             </Sidebar>
             <Button icon="pi pi-align-justify"  onClick={() => setVisible(true)}  />
         </div>

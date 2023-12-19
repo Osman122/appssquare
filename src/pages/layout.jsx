@@ -5,7 +5,7 @@ import Home from './home/home';
 import About from './about/about';
 import Loginform from './login/login';
 import HomePageTemplate from './homeTemplate/homeTemplate';
-import NotHound from './about';
+import Notfound from './notFound';
 
 
 
@@ -23,7 +23,7 @@ const Layout = () => {
 
             <Route path="/"  element={<Home/>} />
             <Route path="/about" element={<About/>} />
-            <Route path="*" element={<NotHound/>}/>
+            <Route path="*" element={<Notfound/>}/>
            </Route>
          
          

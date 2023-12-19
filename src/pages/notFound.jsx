@@ -1,4 +1,4 @@
-const NotHound = () => {
+const Notfound = () => {
     return (
       <div>
         <h1>Page Not Found</h1>
@@ -8,4 +8,4 @@ const NotHound = () => {
     )
   }
   
-  export default NotHound;
+  export default Notfound;

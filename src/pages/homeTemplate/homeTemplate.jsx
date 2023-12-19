@@ -7,11 +7,11 @@ import { useNavigate } from 'react-router-dom';
 const HomePageTemplate= () => {
     const navigate =useNavigate()
 
-    const{token,setToken}=useContext(TokenContext)
-    useEffect(()=>{if (token ==="") {
-        navigate("/login")
+     const{token,setToken}=useContext(TokenContext)
+     useEffect(()=>{if (token ==="") {
+         navigate("/login")
 
-      }},[token])
+       }},[token])
     return (
         <div className="">
             <SideBar/>

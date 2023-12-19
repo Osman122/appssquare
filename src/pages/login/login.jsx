@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import TokenContext from '../../Context/tokenContext';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Toast } from 'primereact/toast';
 
 function Loginform() {
 
@@ -61,8 +62,9 @@ function Loginform() {
     
     axios.request(config)
     .then((response) => {
-      setToken(response.data.token)
       showToastMessage()
+      setToken(response.data.token)
+
       
     })
     .catch((error) => {
@@ -72,13 +74,17 @@ function Loginform() {
     
     
   };
-  useEffect(()=>{if (token !=="") {
+  useEffect(()=>{if (token !== "") {
+    console.log("osososso")
     navigate("/")
     
-  }},[token])
+  }
+else{navigate("/login")}
+console.log("oman")},[token])
 
   return (
     <MDBContainer fluid>
+      <Toast ref={toast} />
       <ToastContainer autoClose={1500}/>
       <MDBRow className='d-flex justify-content-center align-items-center h-100'>
         <MDBCol col='12'>
